@@ -61,10 +61,13 @@ $(function() {
          */
 
         describe('menu', function() {
-            it('hidden menu', function () {
-                expect($('.menu-hidden').is(':visible')).toBe(true);
-            });
+             // Pre-define elements needed for testing hiding/showing of the menu
+    var body = document.body;
+    var menuIcon = document.querySelector(".menu-icon-link");
 
+ it("body has 'menu-hidden' initially", function() {
+      expect(body.className).toContain("menu-hidden");
+    });
             /*  Write a test that ensures the menu changes
              * visibility when the menu icon is clicked. This test
              * should have two expectations: does the menu display when
