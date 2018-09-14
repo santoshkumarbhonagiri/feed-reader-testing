@@ -73,16 +73,14 @@ $(function() {
              * should have two expectations: does the menu display when
              * clicked and does it hide when clicked again.
              */
-            it('menu visible on click', function () {
-                $('a.menu-icon-link').trigger('click');
-                expect($('.menu-hidden').is(':visible')).toBe(false);
-            });
+ it("body toggles the class 'menu-hidden' on clicking menu icon", function() {
+      menuIcon.click();
+      expect(body.className).not.toContain("menu-hidden");
 
-            it('hidden by clicking again ', function () {
-                $('a.menu-icon-link').trigger('click');
-                expect($('.menu-hidden').is(':visible')).toBe(true);
-            });
-        });
+      menuIcon.click();
+      expect(body.className).toContain("menu-hidden");
+    });
+  });
 
     /*  Write a new test suite named "Initial Entries" */
 
