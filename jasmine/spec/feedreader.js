@@ -66,7 +66,7 @@ $(function() {
     var menuIcon = document.querySelector(".menu-icon-link");
 
  it("body has 'menu-hidden' initially", function() {
-      expect(body.className).toContain("menu-hidden");
+      expect($('body').hasClass('menu-hidden')).toBe();
     });
             /*  Write a test that ensures the menu changes
              * visibility when the menu icon is clicked. This test
@@ -75,10 +75,10 @@ $(function() {
              */
  it("body toggles the class 'menu-hidden' on clicking menu icon", function() {
       menuIcon.click();
-      expect(body.className).not.toContain("menu-hidden");
+      expect($('body').hasClass('menu-hidden')).toBe();
 
       menuIcon.click();
-      expect(body.className).toContain("menu-hidden");
+      expect($('body').hasClass('menu-hidden')).toBe();
     });
   });
 
